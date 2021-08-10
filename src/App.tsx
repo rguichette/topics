@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import ThemeBtn from './ThemeBtn';
+import {Home} from './pages'
+
+
+import { setTheme } from './actions/changeTheme';
+import { useSelector, useDispatch } from 'react-redux'
+
+
+import {State} from './store'
+// let t = useSelector
+
 
 function App() {
+const isDark = useSelector((state:State )=>state.theme.dark)
+const dispatch = useDispatch()
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+<div style={{backgroundColor: isDark ? '#333': 'white'}}>
+
+ <p>LIGHT</p>
+
+{ console.log("App loaded.. ",isDark )}
+
+ <ThemeBtn onClick={()=>{
+   dispatch(setTheme(!isDark))
+// console.log("App.. ",state.theme.dark )
+
+ }}/>
+<Home/>
+</div>
   );
 }
 
