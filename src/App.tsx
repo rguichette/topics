@@ -7,6 +7,8 @@ import {Home} from './pages'
 import { setTheme } from './actions/changeTheme';
 import { useSelector, useDispatch } from 'react-redux'
 
+import {BrowserRouter as Router} from 'react-router-dom'
+
 
 import {State} from './store'
 // let t = useSelector
@@ -19,20 +21,23 @@ const dispatch = useDispatch()
 
 
   return (
-    
-<div style={{backgroundColor: isDark ? '#333': 'white'}}>
+    <Router>
 
+<div style={{backgroundColor: isDark ? '#333': 'white'}}>
  <p>LIGHT</p>
 
-{ console.log("App loaded.. ",isDark )}
+{/* { console.log("App loaded.. ",isDark )} */}
 
  <ThemeBtn onClick={()=>{
    dispatch(setTheme(!isDark))
 // console.log("App.. ",state.theme.dark )
 
  }}/>
-<Home/>
+
+   <Home/>
+ 
 </div>
+</Router>
   );
 }
 
