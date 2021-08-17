@@ -7,31 +7,23 @@ import {
   useLocation,
   useParams
 } from "react-router-dom";
-
-// interface 
-
+import StyleSheet from "./StyleSheet";
 
 function Modal(props:{setModalOpened: any}) {
-  // const location = useLocation();
-  // let background = location.state
-  
-
-  
 
   return(
+<StyleSheet>
+  <div>
+<div className="main-content">main content</div>
 
-   <div onClick={()=>{
+<Link to="full_profile">full profile</Link>
+   <button className="btn-close" onClick={()=>{
    props.setModalOpened(false)
-  //  console.log(props)
-
-
-
    }} >
- 
-     MODAL
-   </div>
-
-
+    CLOSE
+   </button>
+</div>  
+</StyleSheet>
  
 
 

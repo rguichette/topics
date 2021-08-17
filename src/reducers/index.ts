@@ -1,17 +1,23 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { AnyAction, createReducer, createSlice, Reducer } from "@reduxjs/toolkit";
 import { setTheme } from "../actions/changeTheme"
 
+import themeReducer from "./themeReducer"
+import requestReducer from "./requestReducer"
 
 
-const initialTheme = {dark: false}
 
-export const themeReducer = createReducer(initialTheme, (builder)=>{
-    builder.addCase(setTheme, (state, action)=>{
-        // //logic 
-        
-        // console.log("action", action.payload.dark)
-        state.dark = action.payload.dark
-    })
-})
 
+
+
+
+const allReducers = {
+    themes:themeReducer,
+    requests:requestReducer,
+}
+
+export default allReducers
+
+// function combineRedcers(themeReducer: Reducer<{ dark: boolean; }, AnyAction>) {
+//     throw new Error("Function not implemented.");
+// }
 

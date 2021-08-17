@@ -7,17 +7,9 @@ import { StyleSheet } from './StyleSheet';
 
 import {Link} from 'react-router-dom'
 
-// import {State} from '../../store'
-
-
 
 function Post() {
-// const isDark = useSelector((state:State )=>state.theme.dark)
 
-// # likes
-// # comments
-//image
-//user
 const [modalOpened, setModalOpened] = useState(false)
 
 function launchModal(){
@@ -25,10 +17,9 @@ function launchModal(){
 setModalOpened(true)
 }
   return (
-    
+<StyleSheet>
 <div >
-<StyleSheet >
-   {/* <Link to={"/hello"}>hello</Link> */}
+<div>
 
    <p onClick={()=>launchModal()}>click me to open</p>
 
@@ -48,13 +39,11 @@ setModalOpened(true)
      
    </div>
    {/* <image sr/> */}
-
-</StyleSheet>
-
- 
-
+</div>
 
 </div>
+</StyleSheet>    
+
   );
 }
 
