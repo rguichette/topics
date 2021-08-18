@@ -14,7 +14,8 @@ flex-direction: column;
 position: absolute;
 top:0;
 left: 0;
-background-color: rgba(0%, 100%, 0%, 0.42);
+background-color: rgba(0%, 100%, 0%, 1.0);
+z-index: 5;
 
 
 

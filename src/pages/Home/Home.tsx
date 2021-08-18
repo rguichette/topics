@@ -4,11 +4,14 @@ import StyleSheet from "./StyleSheet"
 
 import {Post} from '../../components/Post';
 import { State } from '../../store';
+import { Modal } from '../../components/Modal';
 
 
 
  function Home() {
   let posts:any =useSelector((state:State)=>state.requests.data)
+  const isModalOpened = useSelector((state:State)=>state.modal.opened)
+  const ownerClicked = useSelector((state:State)=>state.modal.owner)
 
   return (
 <StyleSheet>
@@ -23,10 +26,12 @@ import { State } from '../../store';
    { 
 
     return <Post key={item.id} likes={item.likes} image={item.image} tags={item.tags}
-     publishDate={item.publishDate} text={item.text} ownerFirstName={item.owner.firstName} ownerLastName={item.owner.lastName} ownerId={item.owner.id} />
+     publishDate={item.publishDate} text={item.text} owner={item.owner} />
     }
   )
 }
+{ isModalOpened? <Modal owner={ownerClicked} /> : null}
+
 
  </div>
   

@@ -13,30 +13,23 @@ interface IPost{
   image:string,
   publishDate:string,
   text: string, 
-  ownerFirstName:string,
-  ownerLastName:string,
-  ownerId:string
+  owner?:any
 }
 
 function Post(item:IPost) {
-const isModalOpened = useSelector((state:State)=>state.modal.opened)
 const dispatch = useDispatch()
 
 
   return (
 <StyleSheet>
-<div onClick={()=>dispatch(view_details(!isModalOpened))}>
-
-{console.log("is it opened?",isModalOpened)}
-   <div className="post-likes"   >
-     <p>{item.ownerFirstName} {item.ownerLastName}</p>
+<div onClick={()=>dispatch(view_details(true, item.owner))}>
+  <img src={item.owner.picture}/>
+    <p>{item.owner.firstName} {item.owner.lastName}</p>
+     
      <p>IC</p>
      <p>{item.likes}</p>
      
-   </div>
    <img src={item.image} alt=""/>
-{/* {isModalOpened} */}
-  { isModalOpened && <Modal/>}
 </div>
 
 </StyleSheet>    

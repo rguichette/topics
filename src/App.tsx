@@ -9,12 +9,11 @@ import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 
 
 import {State} from './store'
-import {ProfilePage} from './pages/ProfileDetails';
+import {ProfilePage} from './pages/Profile';
 
 function App() {
 const isDark = useSelector((state:State )=>state)
 const dispatch = useDispatch()
-
 
 
   return (

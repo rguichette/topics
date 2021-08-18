@@ -1,6 +1,6 @@
 import { call, put } from "redux-saga/effects";
 
-import { fetch_succeeded } from '../actions/sagas';
+import { fetch_post_succeeded } from '../actions/sagas';
 import axios, { AxiosResponse } from 'axios';
 
 
@@ -12,7 +12,7 @@ function fetch_data_helper(){
 }
 export function* fetch_data_saga(){
        const data:AxiosResponse | null | void = yield call(fetch_data_helper);
-       yield put(fetch_succeeded(data))
+       yield put(fetch_post_succeeded(data))
    
  }
 

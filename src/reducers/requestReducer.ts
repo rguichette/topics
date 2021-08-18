@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import {fetch_succeeded,fetch_failed} from "../actions/sagas"
+import {fetch_post_succeeded,fetch_post_failed} from "../actions/sagas"
 
 
 const initialState = { 
@@ -7,16 +7,22 @@ const initialState = {
 }
 
 
-const requestReducer = createReducer(initialState, (builder)=>{
+const postRequestReducer = createReducer(initialState, (builder)=>{
 
-    builder.addCase(fetch_succeeded, (state, action)=>{
+    builder.addCase(fetch_post_succeeded, (state, action)=>{
         state.data = action.payload.data
     })
-    .addCase(fetch_failed,(state, action)=>{
+    .addCase(fetch_post_failed,(state, action)=>{
         //TODO
         console.log("fetching...")
     } )
 })
 
 
-export default requestReducer
+
+// const userRequestReducer  = createReducer(initialState, (builder)=>{
+//     builder.addCase(fetch_succeeded, (state, action)=>{
+//         state.data = action.payload.data
+//     })
+// })
+export default postRequestReducer
