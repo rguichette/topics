@@ -1,6 +1,4 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
-import { Reducer } from 'redux';
 
 import StyleSheet from "./StyleSheet"
 
@@ -21,8 +19,12 @@ import { State } from '../../store';
 {/* <Post/> */}
 
 {
-  posts ==null ? null : posts.map((item:any)=>
-    <Post/>
+  posts ==null ? null : posts.data.map((item:any)=>
+   { 
+
+    return <Post key={item.id} likes={item.likes} image={item.image} tags={item.tags}
+     publishDate={item.publishDate} text={item.text} ownerFirstName={item.owner.firstName} ownerLastName={item.owner.lastName} ownerId={item.owner.id} />
+    }
   )
 }
 

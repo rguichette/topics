@@ -1,6 +1,4 @@
 import { createAction } from "@reduxjs/toolkit";
-import { put } from "redux-saga/effects";
-
 export const FETCH_DATA = 'FETCH_DATA';
 export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED'
 export const FETCH_DATA_FAILED = "FETCH_DATA_FAILED"

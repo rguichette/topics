@@ -1,20 +1,14 @@
-import {configureStore, applyMiddleware} from '@reduxjs/toolkit'
-
+import {configureStore} from '@reduxjs/toolkit'
 
 import createSagaMiddleware from 'redux-saga'
 import { fetch_data_saga } from './api/requests';
 
-
-// import { themeReducer } from './reducers'
 import reducer from './reducers'
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
 
 
-console.log("reducers",reducer)
-
-//test
 export const store =  configureStore({
  reducer, 
   middleware: defaultMiddleware => defaultMiddleware().concat(sagaMiddleware)
@@ -22,7 +16,6 @@ export const store =  configureStore({
 
 
 )
-
 
   sagaMiddleware.run(fetch_data_saga);
 

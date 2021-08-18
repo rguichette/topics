@@ -1,12 +1,9 @@
-import { createReducer, createSlice } from "@reduxjs/toolkit";
-import {fetch_succeeded,fetch_failed,fetch_data, FETCH_DATA } from "../actions/sagas"
+import { createReducer } from "@reduxjs/toolkit";
+import {fetch_succeeded,fetch_failed} from "../actions/sagas"
 
 
-
-const initialState = {
-  
-        data: null
-        
+const initialState = { 
+        data: null       
 }
 
 

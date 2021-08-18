@@ -1,47 +1,44 @@
-import React, {useState} from 'react';
 
 import {Modal} from '../Modal'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { StyleSheet } from './StyleSheet';
 
-import {Link} from 'react-router-dom'
+import { State } from '../../store';
+import { view_details } from '../../actions';
 
-
-function Post() {
-
-const [modalOpened, setModalOpened] = useState(false)
-
-function launchModal(){
-  console.log("openning...")
-setModalOpened(true)
+interface IPost{
+  likes:number, 
+  tags:string[],
+  image:string,
+  publishDate:string,
+  text: string, 
+  ownerFirstName:string,
+  ownerLastName:string,
+  ownerId:string
 }
+
+function Post(item:IPost) {
+const isModalOpened = useSelector((state:State)=>state.modal.opened)
+const dispatch = useDispatch()
+
+
   return (
 <StyleSheet>
-<div >
-<div>
+<div onClick={()=>dispatch(view_details(!isModalOpened))}>
 
-   <p onClick={()=>launchModal()}>click me to open</p>
-
-   {modalOpened && <Modal setModalOpened={(val:boolean)=>{
-      console.log("val is ",val)
-     setModalOpened(val)}}/>}
-
-   {
-   
-
-   
-   }
-   <div className="post-likes"  >
-     <p>image</p>
+{console.log("is it opened?",isModalOpened)}
+   <div className="post-likes"   >
+     <p>{item.ownerFirstName} {item.ownerLastName}</p>
      <p>IC</p>
-     <p>44 likes</p>
+     <p>{item.likes}</p>
      
    </div>
-   {/* <image sr/> */}
+   <img src={item.image} alt=""/>
+{/* {isModalOpened} */}
+  { isModalOpened && <Modal/>}
 </div>
 
-</div>
 </StyleSheet>    
 
   );

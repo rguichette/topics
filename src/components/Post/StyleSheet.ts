@@ -11,4 +11,8 @@ border: 1px solid red;
 height: 250px;
 max-width: 250px;
 
+& img{
+    width: 45%;
+}
+
 ` 
