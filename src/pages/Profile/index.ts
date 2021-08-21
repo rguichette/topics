@@ -1,2 +1,2 @@
-import ProfilePage from './ProfileDetails'
+import ProfilePage from './Profile'
 export {ProfilePage}

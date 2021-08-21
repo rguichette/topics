@@ -33,7 +33,7 @@ const dispatch = useDispatch()
 <Route exact path="/">
      <Home/>
 </Route>
-<Route path="/full_profile">
+<Route path="/full_profile/:userId">
   <ProfilePage/>
 </Route>
 

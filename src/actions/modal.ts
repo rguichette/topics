@@ -16,3 +16,12 @@ return {
 }}
 
 )
+
+// export const close_details = createAction(VIEW_DETAILS, function prepare(opened: boolean=false, owner:any = null){
+//     return {
+//         payload:{
+//             owner
+//         }
+//     }}
+    
+//     )

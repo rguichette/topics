@@ -5,7 +5,7 @@ import { view_details } from "../actions";
 const initialState = { 
         opened: false,
         owner:null
-}
+    }
 
 
 const modalReducer = createReducer(initialState, (builder)=>{

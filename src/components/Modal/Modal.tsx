@@ -20,8 +20,11 @@ function Modal({owner}:{owner:any})  {
 <StyleSheet>
   <div>
 <div className="main-content">main content</div>
+{ owner && <Link to={`full_profile/${owner.id}`} onClick={()=>{ dispatch(view_details(false))}} >full profile</Link>
 
-<Link to="full_profile" onClick={()=>{ dispatch(view_details(false))}} >full profile</Link>
+
+
+}
 <p>{owner.firstName} {owner.lastName}</p>
 <img src={owner.picture}/>
 

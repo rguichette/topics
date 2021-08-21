@@ -22,15 +22,25 @@ const dispatch = useDispatch()
 
   return (
 <StyleSheet>
-<div onClick={()=>dispatch(view_details(true, item.owner))}>
-  <img src={item.owner.picture}/>
-    <p>{item.owner.firstName} {item.owner.lastName}</p>
-     
-     <p>IC</p>
-     <p>{item.likes}</p>
-     
-   <img src={item.image} alt=""/>
+
+
+<div >
+  {
+    item.owner && <div className="info" onClick={()=>dispatch(view_details(true, item.owner))} ><img id="profile_img" src={item.owner.picture}/> <p>{item.owner.firstName} {item.owner.lastName}</p></div>  
+  }
 </div>
+
+  <div className="main_wrapper">
+
+    <img id="post_img" src={item.image} alt=""/>
+  
+   <div className="post_comment_like">
+      <p id="comments">IC</p>
+      <p id="likes">{item.likes}</p>
+  </div>  
+   </div>
+     
+
 
 </StyleSheet>    
 
