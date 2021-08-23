@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetch_posts_data, fetch_user_posts_data } from "../../actions/sagas";
 import { Post } from "../../components/Post";
+import { PostItems } from "../../components/PostItems";
 import { State } from "../../store";
 import StyleSheet from "./StyleSheet"
 
@@ -33,19 +34,17 @@ loading: state.requests.loading
 
   return (
 <StyleSheet>
+
 <div >
 welcome....
 <div className="profile-info">
 
 </div>
-{console.log("query is: ",userId)}
-{/* {console.log("posts is: ",posts.data)} */}
 
-
+{/* 
 <div className="more-posts">
   {
     posts.loading ? <div>LOADING...</div> : <div> { 
-      // console.log("profile posts",posts.data.data)
       posts.data.data.map((item:any)=>{
         console.log(item)
       return <Post key={item.id} likes={item.likes} image={item.image} tags={item.tags}
@@ -61,14 +60,11 @@ welcome....
 
 
   }
-{/* {
-posts && posts.map((item:any)=>{
-  return <div>hello there</div>
-})
-} */}
-</div>
 
+</div> */}
+{/* {console.log("posts ====", posts.data.data)} */}
 
+<PostItems posts={posts.data}/>
 
 
   

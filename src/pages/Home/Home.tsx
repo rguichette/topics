@@ -8,6 +8,7 @@ import { Modal } from '../../components/Modal';
 import { fetch_posts_data } from '../../actions';
 import { useEffect } from 'react';
 import { fetch_user_posts_data } from '../../actions/sagas';
+import { PostItems } from '../../components/PostItems';
 
 
 
@@ -30,9 +31,7 @@ import { fetch_user_posts_data } from '../../actions/sagas';
 <StyleSheet>
 <div >
 
- <div className="post-list-container">
-   {console.log("posts",posts)}
-{/* <Post/> */}
+ {/* <div className="post-list-container">
 
 {
   posts && posts.data.map((item:any)=>
@@ -44,15 +43,16 @@ import { fetch_user_posts_data } from '../../actions/sagas';
   )
 }
 
-{console.log(posts)}
 
 
 
+
+
+ </div> */}
+
+ <PostItems posts={posts}/>
 { isModalOpened? <Modal owner={ownerClicked} /> : null}
 
-
- </div>
-  
 
 </div>
  </StyleSheet> 

@@ -1,33 +1,21 @@
 // import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
 
 
 export const StyleSheet =  styled.div`
 
-display: flex;
-flex-direction: column;
-background-color: #eee;
-min-width: 250px;
-border: 1px solid red;
-/* height: 250px; */
-max-width: 250px;
-margin: 20px;
-border-radius: 8px;
+border: 1px solid black;
+margin-top: 18px;
 
 & .info{
-    /* background-color:yellow; */
+  
 
     display: flex;
     flex-direction:row;  
-    margin-bottom: .5em;
-    margin-top: .5em;
-    
-   justify-content:space-around;
-   padding: 0 1rem;
 
    & p{
-       /* background-color: white; */
+       background-color: white;
        width: 100%;
         text-align: center;
    }
@@ -41,7 +29,7 @@ border-radius: 8px;
     
 }
 & #profile_img{
-    width: 20%; 
+    width: 50px; 
     border-radius : 50px;
     border: 2px solid blue;
     
@@ -53,8 +41,8 @@ border-radius: 8px;
     display: flex;
     flex-direction: row;
     /* background-color: #fff; */
-    margin-right: auto;
-    padding: 0 .6rem;
+    /* margin-right: auto;
+    padding: 0 .6rem; */
 
 
 
@@ -63,6 +51,8 @@ border-radius: 8px;
         margin-left: auto; 
 
 }
+
+
 
   
 }

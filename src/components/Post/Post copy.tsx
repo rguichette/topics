@@ -21,8 +21,8 @@ const dispatch = useDispatch()
 
 
   return (
- <StyleSheet> 
-<div className="poster">
+<StyleSheet>
+
 
 <div >
   {
@@ -41,9 +41,8 @@ const dispatch = useDispatch()
    </div>
      
 
-</div>
 
- </StyleSheet>    
+</StyleSheet>    
 
   );
 }
